@@ -1,0 +1,166 @@
+// If need, change your variables before importing Bulma
+
+$space-bot-1 : 5.625rem;
+$space-bot-2 : 8rem;
+$space-bot-3 : 10rem;
+
+$dark-blue: #0E1D28;
+
+
+@import "~bulma/bulma.sass";
+$box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1), 0 0px 0 1px rgba($scheme-invert, 0.02);
+
+// Disable the widescreen breakpoint
+$widescreen-enabled: false;
+
+// Disable the fullhd breakpoint
+$fullhd-enabled: false;
+
+.wrapper {
+  background     : white url('../images/hero-images.png') no-repeat;
+  background-size: contain;
+
+  & .hero{
+    padding: $space-bot-2;
+    padding-bottom: 0;
+    & .logo{
+      margin-bottom: $space-bot-2;
+    }
+
+    @media screen and (max-width: 767px){
+      & {
+        padding: 2rem;
+
+        & .logo{
+          padding: 2rem 0;
+          margin-bottom: 0;
+        }
+
+        & .title{
+          font-size: 2rem;
+        }
+
+        & .subtitle{
+          font-size: 1rem;
+        }
+
+        & .group{
+          border-radius: .25rem;
+          background: white;
+          box-shadow: 0 0 4px 4px rgb(0 0 0 / 15%);
+          padding: 2rem;
+        }
+
+        & .title,
+        & .subtitle{
+          color: #363636 !important;
+        }
+      }
+
+    }
+  }
+
+  & .boxed{
+    margin: $space-bot-3 auto;
+
+    @media screen and (max-width:767px) {
+      margin          : 2rem auto;
+      background-color: unset;
+      box-shadow      : unset;
+      padding         : 0;
+    }
+    & .wrapper-box{
+      padding         : $space-bot-1;
+
+      @media screen and (max-width:767px) {
+        padding: 2rem;
+      }
+
+      & .title{
+        @media screen and (max-width: 767px){
+          text-align: center;
+        }
+      }
+
+      & .logo{
+
+        @media screen and (max-width:767px) {
+          text-align: center;
+        }
+        
+      }
+    }
+  }
+
+  & .trip,
+  & .Posts{
+    margin-bottom: $space-bot-2;
+
+    @media screen and (max-width:767px){
+      & {
+        padding: 2rem;
+      }
+    }
+
+    & .column {
+      @media screen and (max-width:767px) {
+        padding: 1rem !important;
+      }
+    }
+  }
+
+  & .trip{
+
+    @media screen and (max-width: 767px){
+      margin-bottom: 2rem;
+    }
+  }
+
+  & .Posts{
+
+    & .info{
+      background: rgba(0,0,0,.25);
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  & .footer{
+    background: $dark-blue;
+    height: 140px;
+    margin: auto;
+
+  }
+
+}
+
+h2.title{
+  margin-bottom: 4rem !important;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.bottom-left{
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.relative{
+  position: relative;
+}
+
+.line-50{
+  position: relative;
+
+  &::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50%;
+    bottom: -8px;
+    border-bottom: 3px solid #3088FE;
+  }
+}
