@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Posts() {
 
-  const [data, setData] = useState([]);
+  const [result, setResult] = useState([]);
   const [hasLoading, setHasLoading] = useState(true);
 
   const POSTS_QUERY=`
@@ -49,7 +49,7 @@ function Posts() {
         setHasLoading(true);
       }
     });
-  }, [data]);
+  }, [hasLoading, POSTS_QUERY]);
 
   if(hasLoading) return <p className="has-text-centered my-6 is-size-3">Loading...</p>
   
@@ -60,6 +60,37 @@ function Posts() {
       </h2>
 
       <div className="columns is-flex-wrap-wrap is-justify-content-center is-align-items-center">
+
+        {/* {
+          result.map( (val, idx) => {
+            return (
+              <div className="column relative p-3">
+                <div className="logo-section relative">
+                  <StaticImage src={val.data.thumbnail.url} alt={val.data.thumbnail.url} />
+                  <div className="info is-flex is-flex-direction-row is-flex-wrap-nowrap is-justify-content-space-between absolute p-4 is-full">
+                    <h4 className="title is-size-3 has-text-white is-inline-block m-0">Tokyo</h4>
+
+                    <div className="sub-info is-inline-block my-auto">
+                      <div className="is-inline-block has-text-white mr-2">
+                        <p className="is-inline-block pr-2">221</p>
+                        <StaticImage src="../images/love.png" width={24} alt="Logo Odigo" />
+                      </div>
+
+                      <div className="is-inline-block has-text-white">
+                        <p className="is-inline-block pr-2">221</p>
+                        <StaticImage src="../images/comment.png" width={24} alt="Logo Odigo" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-5">
+                {val.}
+                </p>
+              </div>
+            )
+          })
+        } */}
+
         <div className="column relative p-3">
           <div className="logo-section relative">
             <StaticImage src="../images/hero-images.png" alt="Logo Odigo" />
